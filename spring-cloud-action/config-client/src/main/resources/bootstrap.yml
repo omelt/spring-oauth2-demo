@@ -1,0 +1,32 @@
+
+spring:
+  application:
+    name: user-service
+  cloud:
+    config:
+      fail-fast: true
+#      uri: http://localhost:8769
+      profile: pro
+      discovery:
+        enabled: true
+        service-id: config-server
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ss_test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+      username: root
+      password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+feign:
+  hystrix:
+    enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#  profiles:
+#    active: pro
+
+

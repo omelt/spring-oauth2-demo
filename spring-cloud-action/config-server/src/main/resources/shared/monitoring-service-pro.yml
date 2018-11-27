@@ -1,0 +1,6 @@
+
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: user-service,blog-service
+  cluster-name-expression: new String("default")
